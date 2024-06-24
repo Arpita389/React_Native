@@ -1,4 +1,3 @@
-// src/WelcomeScreen.js
 import React from "react";
 import {
   View,
