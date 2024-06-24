@@ -1,4 +1,3 @@
-// src/ButtonShowcaseScreen.js
 import React from "react";
 import { View, StyleSheet, Alert, ScrollView } from "react-native";
 import CustomButton from "../commonComponents/customComponent/CustomButton";
