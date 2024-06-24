@@ -1,4 +1,3 @@
-// src/RegistrationScreen.js
 import React, { useState } from "react";
 import {
   View,
