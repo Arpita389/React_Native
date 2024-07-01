@@ -43,16 +43,16 @@ bba3)
 ![WhatsApp Image 2024-07-01 at 6 53 57 PM (2)](https://github.com/Arpita389/React_Native/assets/138769882/1c383f25-c8bb-48c7-b732-25c27302050c)
 
 
-**Assignment 7**-
+**Assignment 7**-AccountSettings.jsx
 
 ![WhatsApp Image 2024-07-01 at 6 53 59 PM](https://github.com/Arpita389/React_Native/assets/138769882/2ba9e3ac-755f-4014-a7f9-b6e708e1887f)
 
-**Assignment 8**-
+**Assignment 8**-ProductList.jsx
 
 ![WhatsApp Image 2024-07-01 at 6 53 58 PM (1)](https://github.com/Arpita389/React_Native/assets/138769882/d6b3f6f9-d1dd-4fda-80a3-e7367d791d17)
 
 
-**Assignment 9**-
+**Assignment 9**-ProductList.jsx
 
 ![WhatsApp Image 2024-07-01 at 6 53 58 PM (2)](https://github.com/Arpita389/React_Native/assets/138769882/6118d9c5-806a-490a-a145-265a1afd5d11)
 
