@@ -6,7 +6,7 @@ My First App using React Native <br>
 
 **Assignment 2** -RegistrationScreen.jsx,LoginScreen.jsx <br>
 
-![Regist](https://github.com/Arpita389/React_Native/assets/138769882/a514b828-ad4f-4319-9c98-63d20944
+
 ![WhatsApp Image 2024-07-01 at 6 53 57 PM](https://github.com/Arpita389/React_Native/assets/138769882/95b66ea9-bc93-4847-8061-a3406be83076)
 bba3)
 
