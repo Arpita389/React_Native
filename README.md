@@ -34,7 +34,7 @@ bba3)
 
 **Assignment 5**-Global state-CartContext.jsx,CartReduce.jsx
 <br>
-**Assignment 6**-Cart
+**Assignment 6**-CartScreen.jsx
 
 ![WhatsApp Image 2024-07-01 at 6 53 58 PM](https://github.com/Arpita389/React_Native/assets/138769882/ff88841a-5749-449e-80ca-585f0bdc27d9)
 
