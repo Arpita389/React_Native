@@ -14,7 +14,6 @@ bba3)
 
 ![Registersucces](https://github.com/Arpita389/React_Native/assets/138769882/50e3ee19-14fe-4517-aedc-dc267e02c7e5)
 
-![Login](https://github.com/Arpita389/React_Native/assets/138769882/b050e914-be19-429c-b6d6-2f53ad2fc102)
 
 ![WhatsApp Image 2024-07-01 at 6 53 56 PM](https://github.com/Arpita389/React_Native/assets/138769882/ca9f6015-34bb-4420-985f-aa7686440cdc)
 
