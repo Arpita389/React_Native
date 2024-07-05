@@ -69,12 +69,12 @@ bba3)
 
 ![WhatsApp Image 2024-07-05 at 8 08 12 AM (1)](https://github.com/Arpita389/React_Native/assets/138769882/2bc5e470-cfc7-49cc-942b-6e3683bada80)
 
-**Assignment 9**-
+**Assignment 9**-ProductDetails.jsx
 <br>
 
 ![WhatsApp Image 2024-07-05 at 8 08 13 AM](https://github.com/Arpita389/React_Native/assets/138769882/69366ddd-4ba0-46a0-9310-1bf2afd1235e)
 
 
-**Assignment 10**-
+**Assignment 10**-CartScreen.jsx
 
 ![WhatsApp Image 2024-07-05 at 8 08 12 AM (2)](https://github.com/Arpita389/React_Native/assets/138769882/fe98c6b3-f313-4362-addf-444628165ae2)
