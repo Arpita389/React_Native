@@ -4,10 +4,10 @@ import {
   Text,
   Image,
   StyleSheet,
-  Button,
   FlatList,
   ActivityIndicator,
   Alert,
+  TouchableOpacity,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { CartContext } from "./globalState/CartContext";
@@ -46,8 +46,9 @@ const ProductList = ({ navigation }) => {
   };
 
   const handleBuyNow = (product) => {
-    // Implement your buy now logic here
+    addToCart(product);
     Alert.alert("Product bought");
+    navigation.navigate("Cart");
     console.log(`Product bought: ${product.title}`);
   };
 
@@ -60,30 +61,29 @@ const ProductList = ({ navigation }) => {
       item.price - (item.price * item.discountPercentage) / 100;
 
     return (
-      <View
+      <TouchableOpacity
         key={item.id}
         style={
           isTwoColumn
             ? styles.productContainerTwoColumn
             : styles.productContainer
         }
+        onPress={() => navigation.navigate("ProductDetails", { product: item })}
       >
-        <FlatList
-          horizontal
-          data={item.images}
-          renderItem={({ item: image }) => (
-            <Image
-              source={{ uri: image }}
-              style={styles.image}
-              onError={(error) => {
-                console.error("Image loading error:", error.nativeEvent.error);
-              }}
-            />
-          )}
-          keyExtractor={(image, index) => index.toString()}
-          style={styles.imageContainer}
+        <Image
+          source={{ uri: item.images[0] }}
+          style={isTwoColumn ? styles.imageTwoColumn : styles.image}
+          onError={(error) => {
+            console.error("Image loading error:", error.nativeEvent.error);
+          }}
         />
-        <View style={styles.detailsContainer}>
+        <View
+          style={
+            isTwoColumn
+              ? styles.detailsContainerTwoColumn
+              : styles.detailsContainer
+          }
+        >
           <Text style={styles.title}>{item.title}</Text>
           <View style={styles.tagsContainer}>
             {item.tags.map((tag, index) => (
@@ -105,15 +105,21 @@ const ProductList = ({ navigation }) => {
           </View>
 
           <View style={styles.buttonContainer}>
-            <Button title="Add to Cart" onPress={() => handleAddToCart(item)} />
-            <Button
-              title="Buy Now"
+            <TouchableOpacity
+              style={[styles.button, styles.addToCartButton]}
+              onPress={() => handleAddToCart(item)}
+            >
+              <Text style={styles.buttonText}>Add</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.button, styles.buyNowButton]}
               onPress={() => handleBuyNow(item)}
-              color="#ff6347"
-            />
+            >
+              <Text style={styles.buttonText}>Buy</Text>
+            </TouchableOpacity>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
@@ -123,7 +129,15 @@ const ProductList = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Button title="Toggle Layout" onPress={toggleLayout} />
+      <View style={styles.toggleContainer}>
+        <TouchableOpacity onPress={toggleLayout} style={styles.toggleButton}>
+          <Icon
+            name={isTwoColumn ? "th-list" : "th-large"}
+            size={30}
+            color="black"
+          />
+        </TouchableOpacity>
+      </View>
       <FlatList
         data={products}
         renderItem={renderItem}
@@ -144,8 +158,16 @@ const styles = StyleSheet.create({
   flatListContentContainer: {
     paddingBottom: 16,
   },
+  toggleContainer: {
+    alignItems: "flex-end",
+    marginBottom: 10,
+  },
+  toggleButton: {
+    padding: 10,
+  },
   productContainer: {
-    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-start",
     marginBottom: 16,
     backgroundColor: "#fff",
     borderRadius: 8,
@@ -154,13 +176,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 5,
+    padding: 16,
   },
   productContainerTwoColumn: {
     flex: 1,
     marginBottom: 16,
     backgroundColor: "#fff",
     borderRadius: 8,
-    padding: 16,
+    padding: 8,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
@@ -168,21 +191,29 @@ const styles = StyleSheet.create({
     elevation: 5,
     margin: 8,
   },
-  imageContainer: {
-    flexDirection: "row",
-    height: 300,
-  },
   image: {
-    width: 300,
-    height: 300,
+    width: 150,
+    height: 150,
     resizeMode: "contain",
-    marginRight: 8,
+    marginRight: 16,
+  },
+  imageTwoColumn: {
+    width: "100%",
+    height: 150,
+    resizeMode: "contain",
+    marginBottom: 8,
   },
   detailsContainer: {
-    padding: 16,
+    flex: 1,
+    justifyContent: "flex-start",
+  },
+  detailsContainerTwoColumn: {
+    flex: 1,
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
   title: {
-    fontSize: 24,
+    fontSize: 14,
     fontWeight: "bold",
     marginBottom: 8,
   },
@@ -194,15 +225,16 @@ const styles = StyleSheet.create({
   tag: {
     backgroundColor: "#e0e0e0",
     borderRadius: 5,
-    paddingHorizontal: 8,
+    paddingHorizontal: 4,
     paddingVertical: 4,
-    marginRight: 8,
+    marginRight: 3,
     marginBottom: 8,
   },
   priceContainer: {
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 8,
+    flexWrap: "wrap",
   },
   discountedPrice: {
     fontSize: 20,
@@ -217,13 +249,14 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   discount: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold",
     color: "green",
+    marginTop: 8,
   },
   rating: {
     marginTop: 5,
-    marginLeft: 5,
+    marginLeft: 2,
     fontWeight: "100",
     fontSize: 15,
     backgroundColor: "green",
@@ -245,6 +278,27 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 16,
+    alignItems: "center",
+  },
+  button: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+    marginHorizontal: 5,
+  },
+  addToCartButton: {
+    backgroundColor: "#007bff",
+  },
+  buyNowButton: {
+    backgroundColor: "#D20062",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });
 
