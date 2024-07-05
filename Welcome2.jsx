@@ -37,13 +37,15 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import CartScreen from "./CartScreen";
 import { CartProvider } from "../commonComponents/globalState/CartContext";
 import AccountSettings from "../demo/AccountSettings";
+import EditProfile from "../demo/EditProfile";
+import { AuthProvider } from "../commonComponents/globalState/AuthContext";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator initialRouteName="">
+    <Stack.Navigator initialRouteName="Welcome">
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegistrationScreen} />
@@ -54,40 +56,55 @@ const HomeStack = () => {
   );
 };
 
+const AccountStack = () => {
+  return (
+    <Stack.Navigator initialRouteName="AccountSettings">
+      <Stack.Screen
+        name="AccountSettings"
+        component={AccountSettings}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name="EditProfile" component={EditProfile} />
+      {/*<Stack.Screen name="SavedAddresses" component={SavedAddresses} />*/}
+    </Stack.Navigator>
+  );
+};
 export default function Welcome2() {
   return (
-    <CartProvider>
-      <NavigationContainer>
-        <Tab.Navigator
-          screenOptions={({ route }) => ({
-            tabBarIcon: ({ color, size }) => {
-              let iconName;
+    <AuthProvider>
+      <CartProvider>
+        <NavigationContainer>
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ color, size }) => {
+                let iconName;
 
-              if (route.name === "Home") {
-                iconName = "home";
-              } else if (route.name === "Products") {
-                iconName = "list";
-              } else if (route.name === "Cart") {
-                iconName = "shopping-cart";
-              } else if (route.name === "Account") {
-                iconName = "user-circle";
-              }
+                if (route.name === "Home") {
+                  iconName = "home";
+                } else if (route.name === "Products") {
+                  iconName = "list";
+                } else if (route.name === "Cart") {
+                  iconName = "shopping-cart";
+                } else if (route.name === "Account") {
+                  iconName = "user-circle";
+                }
 
-              return <Icon name={iconName} size={size} color={color} />;
-            },
-          })}
-          tabBarOptions={{
-            activeTintColor: "#D20062",
-            inactiveTintColor: "gray",
-          }}
-        >
-          <Tab.Screen name="Home" component={HomeStack} />
-          <Tab.Screen name="Products" component={ProductList} />
-          <Tab.Screen name="Cart" component={CartScreen} />
-          <Tab.Screen name="Account" component={AccountSettings} />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </CartProvider>
+                return <Icon name={iconName} size={size} color={color} />;
+              },
+            })}
+            tabBarOptions={{
+              activeTintColor: "#D20062",
+              inactiveTintColor: "gray",
+            }}
+          >
+            <Tab.Screen name="Home" component={HomeStack} />
+            <Tab.Screen name="Products" component={ProductList} />
+            <Tab.Screen name="Cart" component={CartScreen} />
+            <Tab.Screen name="Account" component={AccountStack} />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 
