@@ -1,4 +1,4 @@
-![GoingDownYoureGoingDownGIF](https://github.com/Arpita389/React_Native/assets/138769882/6f63d910-e09e-4542-a38b-8e85d5509b41)# React_Native
+# React_Native
 My First App using React Native <br>
 **Assignment 1** - WelcomeScreen.jsx <br>
 
