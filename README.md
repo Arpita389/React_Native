@@ -42,8 +42,9 @@ bba3)
 ![WhatsApp Image 2024-07-01 at 6 53 58 PM](https://github.com/Arpita389/React_Native/assets/138769882/ff88841a-5749-449e-80ca-585f0bdc27d9)
 
 
+![WhatsApp Image 2024-07-05 at 8 08 12 AM](https://github.com/Arpita389/React_Native/assets/138769882/46eaac50-1a63-4418-90a1-c8dc85163882)
 
-![WhatsApp Image 2024-07-01 at 6 53 57 PM (2)](https://github.com/Arpita389/React_Native/assets/138769882/1c383f25-c8bb-48c7-b732-25c27302050c)
+
 
 
 **Assignment 6**-AccountSettings.jsx
