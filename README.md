@@ -1,4 +1,4 @@
-# React_Native
+![GoingDownYoureGoingDownGIF](https://github.com/Arpita389/React_Native/assets/138769882/6f63d910-e09e-4542-a38b-8e85d5509b41)# React_Native
 My First App using React Native <br>
 **Assignment 1** - WelcomeScreen.jsx <br>
 
@@ -19,11 +19,11 @@ bba3)
 
 
 
-**Assignment 3** -CustomButton.jsx , ButtonScreen.jsx <br>
+**Assignment 3** -CustomButton.jsx , ButtonScreen.jsx
+<br>
 
 ![Custom](https://github.com/Arpita389/React_Native/assets/138769882/0ed8f1e0-859d-4f66-836f-f9021623ab3a)
 
-![Customsucc](https://github.com/Arpita389/React_Native/assets/138769882/25dcbabf-df7a-4383-b753-1202d0dd4554)
 <br>
 
 **Updated**-Button.js,ReusableButtons.jsx
