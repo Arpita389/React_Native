@@ -24,7 +24,13 @@ bba3)
 ![Custom](https://github.com/Arpita389/React_Native/assets/138769882/0ed8f1e0-859d-4f66-836f-f9021623ab3a)
 
 ![Customsucc](https://github.com/Arpita389/React_Native/assets/138769882/25dcbabf-df7a-4383-b753-1202d0dd4554)
+<br>
 
+**Updated**-Button.js,ReusableButtons.jsx
+<br>
+
+![WhatsApp Image 2024-07-05 at 8 08 14 AM](https://github.com/Arpita389/React_Native/assets/138769882/57c4cf5a-47c4-41fc-957b-5318eca93ca2)
+<br>
 
 **Assignment 4**-TextInputComponent.jsx,FormComponent.jsx
 
