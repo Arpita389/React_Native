@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -10,32 +10,40 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const AccountSettings = ({ navigation }) => {
-  const dummyProfile = {
-    image:
+  const [profile, setProfile] = useState({
+    avatar:
       "https://cdn3.iconfinder.com/data/icons/3d-printing-icon-set/512/User.png",
     name: "Arpita Mohapatra",
     email: "Arpita@example.com",
-  };
+  });
+
   //https://cdn3.iconfinder.com/data/icons/3d-printing-icon-set/512/User.png
+
+  const handleUpdateProfile = (updatedProfile) => {
+    setProfile(updatedProfile);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Account Settings</Text>
       <View style={styles.profileContainer}>
         <Image
           source={{
-            uri: dummyProfile.image,
+            uri: profile.avatar,
           }}
           style={styles.avatar}
         />
         <View style={styles.profileInfo}>
-          <Text style={styles.profileName}>{dummyProfile.name}</Text>
-          <Text style={styles.profileEmail}>{dummyProfile.email}</Text>
+          <Text style={styles.profileName}>{profile.name}</Text>
+          <Text style={styles.profileEmail}>{profile.email}</Text>
         </View>
       </View>
 
       <TouchableOpacity
         style={styles.option}
-        //onPress={() => navigation.navigate("EditProfile")}
+        onPress={() =>
+          navigation.navigate("EditProfile", { profile, handleUpdateProfile })
+        }
       >
         <Text style={styles.optionText}>Edit Profile</Text>
         <Icon name="angle-right" size={24} color="#888" />
@@ -62,7 +70,7 @@ const AccountSettings = ({ navigation }) => {
       <TouchableOpacity
         style={styles.logoutButton}
         onPress={() => {
-          /* Add your logout logic here */
+          navigation.navigate("Login");
         }}
       >
         <Text style={styles.logoutButtonText}>Logout</Text>
