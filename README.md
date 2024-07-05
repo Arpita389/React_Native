@@ -47,7 +47,7 @@ bba3)
 
 
 
-**Assignment 6**-AccountSettings.jsx
+**Assignment 6**-AccountSettings.jsx,EditProfile.jsx
 
 ![WhatsApp Image 2024-07-01 at 6 53 59 PM](https://github.com/Arpita389/React_Native/assets/138769882/2ba9e3ac-755f-4014-a7f9-b6e708e1887f)
 
